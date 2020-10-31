@@ -1,4 +1,4 @@
-#Wed Oct 28 19:04:35 ICT 2020
+#Sat Oct 31 13:08:09 ICT 2020
 base.0=D\:\\TUGAS KULIAH\\Semester 7\\VSC Project\\si_pegat\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

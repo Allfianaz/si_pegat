@@ -72,27 +72,8 @@ class LoginPage extends StatelessWidget {
                             padding: EdgeInsets.only(left: 10),
                             child: Column(
                               children: [
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.mail, size: 20),
-                                        hintText: "Email",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                  ),
-                                ),
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.lock, size: 20),
-                                        hintText: "Password",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                    obscureText: true,
-                                  ),
-                                )
+                                buildTextField(Icons.mail, "Your Email"),
+                                buildTextField(Icons.lock, "Password")
                               ],
                             ),
                           ),
@@ -224,6 +205,26 @@ class LoginPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Container buildTextField(IconData icon, String _hintText) {
+    return Container(
+      padding: EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: Colors.grey[300])),
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+            icon: Icon(
+              icon,
+              size: 20,
+              color: Colors.orange,
+            ),
+            hintText: _hintText,
+            hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
+            border: InputBorder.none),
       ),
     );
   }

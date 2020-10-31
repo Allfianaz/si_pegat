@@ -72,70 +72,11 @@ class RegisterPage extends StatelessWidget {
                             padding: EdgeInsets.only(left: 10),
                             child: Column(
                               children: [
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.person, size: 20),
-                                        hintText: "FullName",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                  ),
-                                ),
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.person_pin, size: 20),
-                                        hintText: "Username",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                  ),
-                                ),
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon:
-                                            Icon(Icons.phone_android, size: 20),
-                                        hintText: "Phone",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                  ),
-                                ),
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.mail, size: 20),
-                                        hintText: "Email",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                  ),
-                                ),
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.lock, size: 20),
-                                        hintText: "Password",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                    obscureText: true,
-                                  ),
-                                ),
-                                Container(
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        icon:
-                                            Icon(Icons.lock_outline, size: 20),
-                                        hintText: "Repeat Password",
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        border: InputBorder.none),
-                                    obscureText: true,
-                                  ),
-                                )
+                                buildTextField(Icons.person, "Full Name"),
+                                buildTextField(Icons.mail, "Email"),
+                                buildTextField(Icons.lock, "Password"),
+                                buildTextField(
+                                    Icons.lock_outline, "Repeat Password"),
                               ],
                             ),
                           ),
@@ -167,21 +108,21 @@ class RegisterPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(height: 60),
+                          SizedBox(height: 40),
                           InkWell(
                             onTap: () {
                               print("Account Created!");
                             },
                             child: Container(
                               height: 40,
-                              margin: EdgeInsets.symmetric(horizontal: 40),
+                              margin: EdgeInsets.symmetric(horizontal: 80),
                               decoration: BoxDecoration(
                                   color: Colors.orange,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(60))),
                               child: Center(
                                 child: Text(
-                                  "Create Your Account",
+                                  "Create",
                                   style: TextStyle(
                                       fontSize: 15, color: Colors.white),
                                 ),
@@ -197,6 +138,26 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Container buildTextField(IconData icon, String _hintText) {
+    return Container(
+      padding: EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: Colors.grey[300])),
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+            icon: Icon(
+              icon,
+              size: 20,
+              color: Colors.orange,
+            ),
+            hintText: _hintText,
+            hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
+            border: InputBorder.none),
       ),
     );
   }
