@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:si_pegat/screens/intro_page.dart';
 // import 'package:project_1/screens/login_page.dart';
 // import 'package:project_1/screens/register_page.dart';
-import 'package:si_pegat/screens/splashscreen.dart';
+// import 'package:si_pegat/screens/splashscreen.dart';
 // import 'package:project_1/screens/splashscreen.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(),
+      home: IntroPage(),
     );
   }
 }
